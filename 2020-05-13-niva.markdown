@@ -1,0 +1,10 @@
+---
+layout: post
+title: Niva Ranavat
+date: 2020-05-13
+categories: team
+---
+
+# Niva Ranavat
+
+Niva Ranavat is a sophomore student at the University of California, Irvine studying computer science. I like horror movies and thai food.
