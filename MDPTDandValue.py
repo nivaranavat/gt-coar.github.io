@@ -254,7 +254,7 @@ if __name__ == '__main__':
     
     print("With Constant Step Size\n")
     learner = TDLearner(policy={0:0.5,1:0.5},states = 72, actions = 2)
-    learner.runEnvironment(1000,200)
+    learner.runEnvironment(100000,200)
     
     
 #     print("With Diminishing Step Size")
