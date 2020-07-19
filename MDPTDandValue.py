@@ -203,7 +203,7 @@ class TDLearner:
         #create the transition probability matrix given the policy pi
         self.createProbabilityMatrix()
         for i_episode in range(episodes):
-            if i_episode%20==0:
+            if i_episode%1000==0:
                 print(i_episode, np.linalg.norm(self.value_function))
             totalReward = 0
             a = []
