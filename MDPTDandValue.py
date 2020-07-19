@@ -204,7 +204,7 @@ class TDLearner:
         self.createProbabilityMatrix()
         for i_episode in range(episodes):
             if i_episode%20==0:
-                print(i_episode)
+                print(i_episode, np.linalg.norm(self.value_function))
             totalReward = 0
             a = []
             pb = []
