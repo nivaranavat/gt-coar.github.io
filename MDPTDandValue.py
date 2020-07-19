@@ -242,7 +242,7 @@ class TDLearner:
                 #print(state,next_state,reward,action)
                 
                 # move on to the next state and action pair
-                #state = next_state
+                state = next_state
                 #totalReward += reward
                 difference[t] = np.linalg.norm(self.V - self.value_function)
                 V[t] = np.linalg.norm(self.value_function)
