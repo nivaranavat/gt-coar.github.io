@@ -90,7 +90,6 @@ class TDLearner:
         :return: void,will change the q_function in the class
 
         using the on policy temporal difference formula
-        V (S) ← V (S) + α[R + γV (S') − V (S)]
         """
         
         self.value_function[state] = self.getValue(state) + \
