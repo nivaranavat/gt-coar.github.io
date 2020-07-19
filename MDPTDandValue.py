@@ -228,8 +228,9 @@ class TDLearner:
                 
 
                 
-                # update the Q function with the new value
+                # update the V function with the new value
                 #for state in range(self.states):
+                np.random.seed(0)
                 next_state = self.getNextState(state)
                 reward = self.rewardMatrix[action][state][next_state]
                 
