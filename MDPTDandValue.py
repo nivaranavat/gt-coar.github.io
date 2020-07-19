@@ -1,5 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
 import mdptoolbox.example
 import random
 import math
@@ -163,14 +162,7 @@ class TDLearner:
         #The Value function limit seems to be a Value Function with a 2-norm approaching around 16
         print("Number of Iterations to achieve a Value Function:   ", iteration,"\n")
         print("Approximately the limit",self.V, np.linalg.norm(self.V))
-        plt.figure(figsize = (20,5))
-        plt.plot(range(iteration), v_iter, "b-", label = "|| V ||")
-        #plt.plot(range(iteration),np.zeros(iteration)+1.52,"r-", label = "|| V* ||")
-        plt.xlabel("Iterations")
-        plt.ylabel("Value Iteration 2-Norm")
-        plt.title("Iterative Policy Evaluation")
-        plt.legend()
-        plt.show()
+
         
     def getOptimalPolicy(self):
         return self.optimal_policy
@@ -208,9 +200,6 @@ class TDLearner:
  
         self.valueIteration()
         
-        plt.figure(figsize=(20,5))
-        fig,ax = plt.subplots(2, figsize=(20,10))
-        #ax[0].figure(figsize=(20,5))
         #create the transition probability matrix given the policy pi
         self.createProbabilityMatrix()
         for i_episode in range(episodes):
@@ -255,14 +244,7 @@ class TDLearner:
                 V[t] = np.linalg.norm(self.value_function)
                 
                 
-            ax[0].plot(range(maxtimesteps * i_episode, maxtimesteps * i_episode + maxtimesteps), difference, 'b-')
-            ax[1].plot(range(maxtimesteps * i_episode, maxtimesteps * i_episode + maxtimesteps), V, 'b-')
-            
-        ax[0].set_title("2-norm of Value limit - TD Value Update")
-        ax[1].set_title("2 norm of Value Function by itself over Timesteps")
-        plt.xlabel("TimeStep")
-        plt.ylabel("2-norm Value over all States")
-        plt.show()
+
         print("2-norm of Value function after TD Learning:  ", np.linalg.norm(self.value_function), "\n Actual value function vector:  ", self.value_function, "\n")
         
     
