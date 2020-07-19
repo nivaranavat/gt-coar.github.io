@@ -229,10 +229,10 @@ class TDLearner:
 
                 
                 # update the Q function with the new value
-                for state in range(self.states):
-                    next_state = self.getNextState(state)
-                    reward = self.rewardMatrix[action][state][next_state]
-                    self.updateValueFunction(state,next_state, reward)
+                #for state in range(self.states):
+                next_state = self.getNextState(state)
+                reward = self.rewardMatrix[action][state][next_state]
+                self.updateValueFunction(state,next_state, reward)
                 
                 
                 #print(state,next_state,reward,action)
