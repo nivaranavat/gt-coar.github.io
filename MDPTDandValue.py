@@ -1,4 +1,4 @@
-import /home/nranavat/lib/numpy as np
+import lib/numpy as np
 import mdptoolbox.example
 import random
 import math
