@@ -203,8 +203,8 @@ class TDLearner:
         #create the transition probability matrix given the policy pi
         self.createProbabilityMatrix()
         for i_episode in range(episodes):
-            if i_episode%1000==0:
-                print(i_episode, np.linalg.norm(self.value_function))
+            #if i_episode%1000==0:
+            
             totalReward = 0
             a = []
             pb = []
@@ -232,6 +232,10 @@ class TDLearner:
                 #for state in range(self.states):
                 next_state = self.getNextState(state)
                 reward = self.rewardMatrix[action][state][next_state]
+                
+                
+                print(i_episode, np.linalg.norm(self.value_function),self.value_function)
+                print(state, next_state, reward)
                 self.updateValueFunction(state,next_state, reward)
                 
                 
@@ -254,7 +258,7 @@ if __name__ == '__main__':
     
     print("With Constant Step Size\n")
     learner = TDLearner(policy={0:0.5,1:0.5},states = 72, actions = 2)
-    learner.runEnvironment(100000,200)
+    learner.runEnvironment(1,200)
     
     
 #     print("With Diminishing Step Size")
