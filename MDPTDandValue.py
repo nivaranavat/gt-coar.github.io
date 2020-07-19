@@ -1,4 +1,4 @@
-import lib.numpy as np
+import numpy as np
 import mdptoolbox.example
 import random
 import math
